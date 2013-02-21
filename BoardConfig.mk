@@ -17,13 +17,8 @@
 #
 # Product-specific compile-time definitions.
 #
-
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/p1c/BoardConfigVendor.mk
-
-# Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/p1c
-TARGET_KERNEL_CONFIG := cyanogenmod_p1c_defconfig
 
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := galaxytab7c,p1c,SCH-I800,SPH-P100,vzwtab
@@ -36,6 +31,3 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/p1c/shbootimg.mk
 # we don't need these img files, but default sizes are way too low
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 262144000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 262144000
-
-# Import the p1-common BoardConfigCommon.mk
-include device/samsung/p1-common/BoardConfigCommon.mk
