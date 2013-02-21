@@ -17,8 +17,9 @@
 #
 # Product-specific compile-time definitions.
 #
-# Use the non-open-source parts, if they're present
--include vendor/samsung/p1c/BoardConfigVendor.mk
+
+# Import p1-common config
+include device/samsung/p1-common/BoardConfigCommon.mk
 
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := galaxytab7c,p1c,SCH-I800,SPH-P100,vzwtab
@@ -31,3 +32,8 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/p1c/shbootimg.mk
 # we don't need these img files, but default sizes are way too low
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 262144000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 262144000
+
+#BOARD_USES_HDMI := true
+TARGET_USE_HWDECODING_TVOUT := true
+
+TARGET_SEC_OMX_BIG_MMAP_BUFFER_SIZE := true
