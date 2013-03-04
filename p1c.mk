@@ -4,7 +4,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, device/samsung/p1-common/device_base.mk)
 $(call inherit-product-if-exists, vendor/samsung/p1c/p1c-vendor.mk)
 
-# overlay
 DEVICE_PACKAGE_OVERLAYS := device/samsung/p1c/overlay
 
 # Init files
@@ -13,13 +12,13 @@ PRODUCT_COPY_FILES := \
     device/samsung/p1c/init.p1c.rc:root/init.p1c.rc \
     device/samsung/p1c/ueventd.p1c.rc:root/ueventd.p1c.rc
 
-# These are the hardware-specific features
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
-
 # vold
 PRODUCT_COPY_FILES += \
     device/samsung/p1c/prebuilt/etc/vold.fstab:system/etc/vold.fstab
+
+# These are the hardware-specific features
+PRODUCT_COPY_FILES := \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
 # RIL
 PRODUCT_COPY_FILES += \
@@ -42,7 +41,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
        net.connectivity.type=CDMA1 \
        net.interfaces.defaultroute=cdma \
        rild.libpath=/system/lib/libsec-ril40.so \
-       rild.libargs=-d /dev/ttyS0 \
+       rild.libargs=-d/dev/ttyS0 \
        mobiledata.interfaces=wlan0,ppp0
 
 #Set build fingerprint / ID / Product Name ect.
