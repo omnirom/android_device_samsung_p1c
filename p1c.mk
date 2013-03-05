@@ -17,7 +17,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/p1c/prebuilt/etc/vold.fstab:system/etc/vold.fstab
 
 # These are the hardware-specific features
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
 # RIL
