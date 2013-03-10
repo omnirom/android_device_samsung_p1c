@@ -1,13 +1,13 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+DEVICE_PACKAGE_OVERLAYS := device/samsung/p1c/overlay
 
 $(call inherit-product, device/samsung/p1-common/device_base.mk)
 $(call inherit-product-if-exists, vendor/samsung/p1c/p1c-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS := device/samsung/p1c/overlay
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Init files
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     device/samsung/p1c/fstab.p1c:root/fstab.p1c \
     device/samsung/p1c/init.p1c.rc:root/init.p1c.rc \
     device/samsung/p1c/ueventd.p1c.rc:root/ueventd.p1c.rc
@@ -16,16 +16,13 @@ PRODUCT_COPY_FILES := \
 PRODUCT_COPY_FILES += \
     device/samsung/p1c/prebuilt/etc/vold.fstab:system/etc/vold.fstab
 
-# These are the hardware-specific features
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
-
 # RIL
 PRODUCT_COPY_FILES += \
-    device/samsung/p1c/prebuilt/etc/ppp/ip-up:system/etc/ppp/ip-up
+    device/samsung/p1c/prebuilt/etc/ppp/ip-up:system/etc/ppp/ip-up \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
 # Verizon cdma stuff
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
        ro.telephony.default_network=4 \
        ro.ril.def.agps.mode=2 \
        ro.ril.samsung_cdma=true \
