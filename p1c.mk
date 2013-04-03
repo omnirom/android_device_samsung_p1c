@@ -10,7 +10,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 PRODUCT_COPY_FILES += \
     device/samsung/p1c/fstab.p1c:root/fstab.p1c \
     device/samsung/p1c/init.p1c.rc:root/init.p1c.rc \
-    device/samsung/p1c/ueventd.p1c.rc:root/ueventd.p1c.rc
+    device/samsung/p1c/ueventd.p1c.rc:root/ueventd.p1c.rc \
+    device/samsung/p1-common/init.recovery.rc:root/init.recovery.p1c.rc
 
 # vold
 PRODUCT_COPY_FILES += \
