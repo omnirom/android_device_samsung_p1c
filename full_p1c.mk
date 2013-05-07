@@ -6,6 +6,6 @@ PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SCH-I800
 
-TARGET_KERNEL_SOURCE := kernel/samsung/p1
+TARGET_KERNEL_SOURCE := kernel/samsung/p1c
 TARGET_KERNEL_CONFIG := cyanogenmod_p1c_defconfig
 
