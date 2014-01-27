@@ -1,4 +1,5 @@
 # Copyright (C) 2007 The Android Open Source Project
+# Copyright (C) 2013 OmniROM Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -48,13 +49,11 @@ $(call add-clean-step, find $(PRODUCT_OUT) -name "*.apk" | xargs rm)
 # ************************************************
 # NEWER CLEAN STEPS MUST BE AT THE END OF THE LIST
 # ************************************************
-$(call add-clean-step, rm -rf $(TARGET_OUT)/build.prop)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/product/p1/obj/SHARED_LIBRARIES/libaudio_intermediates)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/product/p1/obj/SHARED_LIBRARIES/libaudio_intermediates)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/product/p1/obj/STATIC_LIBRARIES/libasound_intermediates)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/product/p1/obj/EXECUTABLES/alsa_*)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/product/p1/system/bin/alsa_*)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/product/p1/system/etc/asound.conf)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/product/p1/system/usr/share/alsa)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/product/p1/obj/PACKAGING/systemimage_intermediates)
-$(call add-clean-step, rm -rf $(OUT_DIR)/target/product/p1/obj/SHARED_LIBRARIES/libaudio_intermediates)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/build.prop)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/EXECUTABLES/alsa_*)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/bin/alsa_*)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/etc/asound.conf)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/usr/share/alsa)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/PACKAGING/systemimage_intermediates)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/SHARED_LIBRARIES/libaudio_intermediates)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/STATIC_LIBRARIES/libasound_intermediates)

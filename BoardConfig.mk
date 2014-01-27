@@ -1,5 +1,5 @@
-#
 # Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2013 OmniROM Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -30,11 +30,17 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/p1c/shbootimg.mk
 
 # Dummy values
 # we don't need these img files, but default sizes are way too low
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 524288000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 524288000
-
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2010529792
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 477626368
+ 
 #BOARD_USES_HDMI := true
-TARGET_USE_HWDECODING_TVOUT := true
+#TARGET_USE_HWDECODING_TVOUT := true
+
+# Recovery
+TW_INTERNAL_STORAGE_PATH        := "/sdcard"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+TARGET_RECOVERY_FSTAB := device/samsung/p1c/fstab.p1c
+
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/lun%d/file"
 

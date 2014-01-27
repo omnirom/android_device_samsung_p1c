@@ -35,7 +35,7 @@
          PackageManager.FEATURE_TELEPHONY system feature, which is
          available on *any* device with a telephony radio, even if the
          device is data-only. -->
-    <bool name="config_voice_capable">false</bool>
+    <bool name="config_voice_capable">true</bool>
 
     <!-- If this value is true, we handle Samsung CDMA's message ID method -->
     <!-- needed for incoming SMS on CDMA tablets -->

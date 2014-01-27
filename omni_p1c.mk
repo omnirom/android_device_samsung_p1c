@@ -1,4 +1,4 @@
-# Copyright (C) 2010 The Android Open Source Project
+# Copyright (C) 2009 The Android Open Source Project
 # Copyright (C) 2013 OmniROM Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := $(call my-dir)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, vendor/omni/config/cdma.mk)
+$(call inherit-product, vendor/omni/config/common.mk)
 
-ifeq ($(TARGET_DEVICE),p1c)
-  include $(call all-makefiles-under,$(LOCAL_PATH))
-endif
+$(call inherit-product, device/samsung/p1c/device.mk)
+
+PRODUCT_NAME := omni_p1c
+PRODUCT_DEVICE := p1c
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := SCH-I800
+
+TARGET_KERNEL_SOURCE := kernel/samsung/aries
+TARGET_KERNEL_CONFIG := custom_p1c_defconfig
