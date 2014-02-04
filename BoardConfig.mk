@@ -37,11 +37,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 477626368
 #TARGET_USE_HWDECODING_TVOUT := true
 
 # Recovery
-TW_INTERNAL_STORAGE_PATH        := "/sdcard"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TARGET_RECOVERY_FSTAB := device/samsung/p1c/fstab.p1c
-
-# Vold
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/lun%d/file"
 
 TARGET_SEC_OMX_BIG_MMAP_BUFFER_SIZE := true
