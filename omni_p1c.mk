@@ -26,4 +26,4 @@ PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SCH-I800
 
 TARGET_KERNEL_SOURCE := kernel/samsung/aries
-TARGET_KERNEL_CONFIG := custom_p1c_defconfig
+TARGET_KERNEL_CONFIG := omni_p1c_defconfig
